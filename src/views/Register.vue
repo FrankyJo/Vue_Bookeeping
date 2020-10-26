@@ -39,7 +39,7 @@
             :class="{invalid: $v.name.$dirty && !$v.name.required}">
         <label for="name">Имя</label>
         <small class="helper-text invalid"
-        v-if="$v.name.$dirty && !$v.name.required">Введите ваше имя</small>
+               v-if="$v.name.$dirty && !$v.name.required">Введите ваше имя</small>
       </div>
       <p>
         <label>
@@ -95,7 +95,7 @@
             }
         },
         methods: {
-            submitHandler() {
+            async submitHandler() {
                 if (this.$v.$invalid) {
                     this.$v.$touch()
                     return
@@ -105,8 +105,11 @@
                     password: this.password,
                     name: this.name
                 }
-                console.log(formData)
-                this.$router.push('/')
+                try {
+                    await this.$store.dispatch('register', formData)
+                    this.$router.push('/')
+                } catch (e) {
+                }
             }
         }
     }
