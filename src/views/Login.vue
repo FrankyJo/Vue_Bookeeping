@@ -78,7 +78,6 @@
         },
         methods: {
             async submitHandler() {
-                console.log(this.$v.password)
                 if (this.$v.$invalid) {
                     this.$v.$touch()
                     return

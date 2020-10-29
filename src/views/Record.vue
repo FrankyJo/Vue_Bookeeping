@@ -11,7 +11,7 @@
     </p>
     <form v-else class="form" @submit.prevent="submitHandler">
       <div class="input-field">
-        <select ref="select">
+        <select ref="select" v-model="category">
           <option
               v-for="c in categories"
               :key="c.id"
@@ -103,7 +103,7 @@
             if (this.categories.length) {
                 this.category = this.categories[0].id
             }
-
+            console.log(this.category)
             setTimeout(() => {
                 this.select = M.FormSelect.init(this.$refs.select)
                 M.updateTextFields()
@@ -143,7 +143,6 @@
                         const bill = this.type === 'income'
                             ? this.info.bill + this.amount
                             : this.info.bill - this.amount
-                        console.log(bill)
                         await this.$store.dispatch('updateInfo', {bill})
                         this.$message('Запись успешно создана')
                         this.$v.$reset()
