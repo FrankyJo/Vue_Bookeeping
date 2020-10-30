@@ -2,7 +2,7 @@
   <div>
     <div>
       <div class="breadcrumb-wrap">
-        <a href="/history" class="breadcrumb">История</a>
+        <router-link to="/history" class="breadcrumb">История</router-link>
         <a class="breadcrumb">
           Расход
         </a>
@@ -26,7 +26,14 @@
 
 <script>
     export default {
-        name: 'Detail-record'
+        name: 'Detail',
+        data: () => ({
+            loading: true,
+            record: null
+        }),
+        async mounted() {
+            console.log('ok')
+        }
     }
 </script>
 
