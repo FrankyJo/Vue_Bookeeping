@@ -103,5 +103,7 @@
 </script>
 
 <style scoped>
-
+  .auth-card {
+    max-width: 100%;
+  }
 </style>
