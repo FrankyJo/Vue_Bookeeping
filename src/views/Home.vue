@@ -6,7 +6,6 @@
       <button class="btn waves-effect waves-light btn-small" @click="refresh">
         <i class="material-icons">refresh</i>
       </button>
-      <p>{{this.currency.timestamp}}</p>
     </div>
     <Loader v-if="loading"/>
     <div v-else class="row">
