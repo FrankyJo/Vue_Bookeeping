@@ -1,0 +1,20 @@
+{
+  "Accountant": "Accountant in your pocket",
+  "Name": "Name",
+  "Update" : "Update",
+  "ProfileTitle": "Profile",
+  "BillTitle": "Bill",
+  "LoginTitle": "Login",
+  "RegisterTitle": "Login",
+  "PlanningTitle": "Planning",
+  "RecordTitle": "New Record",
+  "CategoriesTitle": "Categories",
+  "DetailTitle": "Detail",
+  "HistoryTitle": "History",
+  "Message_EnterName": "Enter name",
+  "Menu_Bill": "Bill",
+  "Menu_History": "History",
+  "Menu_Planning": "Planning",
+  "Menu_Record": "New Record",
+  "Menu_Category": "Categories"
+}

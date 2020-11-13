@@ -11,7 +11,7 @@
       <ul class="right hide-on-small-and-down">
         <li>
           <a
-              class="dropdown-trigger black-text"
+              class="dropdown-trigger black-text dropdown-button"
               href="#"
               data-target="dropdown"
               ref="dropdown"
@@ -38,7 +38,11 @@
     </div>
   </nav>
 </template>
-
+<style scoped lang="scss">
+  .dropdown-button{
+    padding: 0 40px;
+  }
+</style>
 <script>
     export default {
         name: 'Navbar',

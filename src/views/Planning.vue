@@ -36,6 +36,11 @@
 
     export default {
         name: 'Planning',
+        metaInfo() {
+            return {
+                title: this.$title('PlanningTitle')
+            }
+        },
         data: () => ({
             loading: true,
             categories: []
@@ -50,8 +55,6 @@
                     .reduce((total, record) => {
                         return total += +record.amount
                     }, 0)
-                console.log(records
-                    .filter(r => r.categoryId === cat.id))
                 const percent = 100 * spend / cat.limit
                 const progressPercent = percent > 100 ? 100 : percent
                 const progressColor = percent < 60

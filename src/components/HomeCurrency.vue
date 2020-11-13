@@ -1,5 +1,5 @@
 <template>
-  <div class="col s12 m6 l8">
+  <div class="col s12 m12 l8">
     <div class="card orange darken-3 bill-card">
       <div class="card-content white-text">
         <div class="card-header">
@@ -42,6 +42,6 @@
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 
 </style>

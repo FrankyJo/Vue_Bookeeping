@@ -24,6 +24,11 @@
 
     export default {
         name: 'Categories',
+        metaInfo() {
+            return {
+                title: this.$title('CategoriesTitle')
+            }
+        },
         data: () => ({
             categories: [],
             loading: true,

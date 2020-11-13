@@ -2,8 +2,8 @@
   <div>
     <Loader v-if="loading"/>
     <div v-else class="app-main-layout">
-      <Navbar @click="isOpen = !isOpen"/>
-      <Sidebar v-model="isOpen"/>
+      <Navbar @click="isOpen = !isOpen" @toggleSidebar="toggle"/>
+      <Sidebar v-model="isOpen" @toggleSidebar="toggle" :key="locale"/>
 
       <main class="app-content" :class="{full: !isOpen}">
         <div class="app-page">
@@ -42,9 +42,19 @@
 
             this.loading = false
         },
+        methods: {
+            toggle() {
+                if (document.body.clientWidth <= 768) {
+                    this.isOpen = false
+                }
+            }
+        },
         computed: {
             error() {
                 return this.$store.getters.error
+            },
+            locale() {
+                return this.$store.getters.info.locale
             }
         },
         watch: {

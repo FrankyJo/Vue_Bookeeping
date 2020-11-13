@@ -42,10 +42,30 @@
                 required: true,
                 type: Array
             }
+        },
+        mounted() {
+            console.log('record', this.records)
         }
     }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+  td, th{
+    @media all and (max-width: 440px){
+      font-size: 9px;
+    }
+  }
+  table{
+    span.badge{
+      @media all and (max-width: 440px){
+        font-size: 9px;
+      }
+    }
+    .btn-small{
+      @media all and (max-width: 440px){
+        height: 22px;
+        line-height: 22px;
+      }
+    }
+  }
 </style>

@@ -24,6 +24,11 @@
 
     export default {
         name: 'Home',
+        metaInfo() {
+            return {
+                title: this.$title('BillTitle')
+            }
+        },
         data: () => ({
             loading: true,
             currency: null
@@ -46,6 +51,11 @@
     }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+  .row {
+    @media all and (max-width: 992px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 </style>

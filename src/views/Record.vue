@@ -87,6 +87,11 @@
 
     export default {
         name: 'Record',
+        metaInfo() {
+            return {
+                title: this.$title('RecordTitle')
+            }
+        },
         data: () => ({
             loading: true,
             categories: [],
@@ -103,7 +108,6 @@
             if (this.categories.length) {
                 this.category = this.categories[0].id
             }
-            console.log(this.category)
             setTimeout(() => {
                 this.select = M.FormSelect.init(this.$refs.select)
                 M.updateTextFields()
