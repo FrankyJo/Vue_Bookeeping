@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.6b9962841dafa9ef2c1e83e8cce6a563.js"
+  "/precache-manifest.688e2bc30df1efaa42d26d3b4145fe3e.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "vuebookeeping"});
