@@ -16,6 +16,12 @@
           <i class="large material-icons">add</i>
         </router-link>
       </div>
+
+      <div class="label-version">
+        <router-link class="version" to="/version">
+          {{version}}
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -24,12 +30,14 @@
     import Navbar from '../components/app/Navbar'
     import Sidebar from '../components/app/Sidebar'
     import messages from '../utils/messages'
+    import ver from '../../version'
 
     export default {
         name: 'MainLayout',
         data: () => ({
             isOpen: true,
-            loading: true
+            loading: true,
+            version: ver[0].version
         }),
         components: {
             Navbar,
@@ -39,7 +47,7 @@
             if (!Object.keys(this.$store.getters.info).length) {
                 await this.$store.dispatch('fetchInfo')
             }
-
+            console.log()
             this.loading = false
         },
         methods: {
@@ -66,5 +74,15 @@
 </script>
 
 <style scoped>
-
+  .label-version{
+    position: fixed;
+    bottom: 0;
+    left: 260px;
+    background: #5f5f5f;
+    padding: 2px 13px;
+    border-radius: 4px 4px 0 0;
+  }
+  .version{
+    color:white;
+  }
 </style>

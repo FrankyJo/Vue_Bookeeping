@@ -53,7 +53,7 @@
         },
         methods: {
             setup(categories) {
-                this.setupPagination(this.records.map(record => {
+                this.setupPagination(this.records.reverse().map(record => {
                     return {
                         ...record,
                         categoryName: categories.find(c => c.id === record.categoryId).title,
@@ -90,7 +90,8 @@
                             'rgba(153, 102, 255, 1)',
                             'rgba(255, 159, 64, 1)'
                         ],
-                        borderWidth: 1
+                        borderWidth: 2,
+                        weight: 3
                     }]
                 })
             }
@@ -102,5 +103,4 @@
 </script>
 
 <style scoped>
-
 </style>
