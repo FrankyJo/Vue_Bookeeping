@@ -79,6 +79,15 @@ const routes = [
             auth: true
         },
         component: () => import('../views/Record.vue')
+    },
+    {
+        path: '/version',
+        name: 'Version',
+        meta: {
+            layout: 'main',
+            auth: true
+        },
+        component: () => import('../views/Version.vue')
     }
 ]
 

@@ -23,7 +23,7 @@
         }),
         computed: {
             base() {
-                return this.$store.getters.info.bill / (this.rates['UAH'] / this.rates['EUR'])
+                return this.$store.getters.info.bill / (this.rates['UAH'] / this.rates['USD'])
             }
         },
         methods: {

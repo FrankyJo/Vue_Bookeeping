@@ -49,8 +49,8 @@
             const records = await this.$store.dispatch('fetchRecords')
             const categories = await this.$store.dispatch('fetchCategories')
             this.categories = categories.map(cat => {
-                console.log(cat.id)
                 const spend = records
+                    .filter(d => new Date(d.date) >= new Date(this.getCurrentMonthAndYear()))
                     .filter(r => r.categoryId === cat.id)
                     .reduce((total, record) => {
                         return total += +record.amount
@@ -63,8 +63,8 @@
                         ? 'yellow'
                         : 'red'
 
-                 const tooltipValue = cat.limit - spend
-                console.log(tooltipValue)
+                const tooltipValue = cat.limit - spend
+
                 const tooltip = `${tooltipValue < 0 ? 'Превышение на' : 'Осталось'} ${currencyFilter(Math.abs(tooltipValue))}`
 
                 return {
@@ -76,6 +76,12 @@
                 }
             })
             this.loading = false
+        },
+        methods: {
+            getCurrentMonthAndYear() {
+                const currentDate = new Date()
+                return `${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-01`
+            }
         },
         computed: {
             ...mapGetters(['info'])
