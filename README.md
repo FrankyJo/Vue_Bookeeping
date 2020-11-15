@@ -1,5 +1,7 @@
 # vuebookeeping
 
+https://vuebookkeeping-dbd80.web.app/#/
+
 ## Project setup
 ```
 npm install
